@@ -6,7 +6,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py 
 RUN pip install requests 
 
-RUN git clone https://github.com/benoitc/restkit.git 
+RUN git clone https://github.com/benoitc/restkit.git restkit
+WORKDIR restkit
 RUN pip install -r requirements.txt 
 RUN python setup.py install 
 RUN pip install restkit 
