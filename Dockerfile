@@ -5,8 +5,10 @@ WORKDIR /home/git
 RUN git clone https://github.com/infobyte/faraday.git faraday
 WORKDIR faraday
 
-RUN pip install requests https://bootstrap.pypa.io/get-pip.py
-RUN pip install requests 
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN pip install requests
+RUN pip install restkit
 
 RUN ./install.sh
 RUN python faraday-server.py
