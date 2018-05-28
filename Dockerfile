@@ -5,5 +5,5 @@ WORKDIR /home/git
 RUN git clone https://github.com/infobyte/faraday.git faraday
 WORKDIR faraday
 RUN ./install.sh
-RUN ./faraday-server.py
+RUN python faraday-server.py
 CMD /home/git/faraday/faraday.py
