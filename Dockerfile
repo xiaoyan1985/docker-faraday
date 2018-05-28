@@ -1,7 +1,8 @@
 FROM kalilinux/kali-linux-docker:latest
 
-RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support && \
-    pip install requestshttps://bootstrap.pypa.io/get-pip.py && \
+RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support 
+RUN wget https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
     pip install requests && \
     git clone https://github.com/benoitc/restkit.git && \
     cd restkit && \
