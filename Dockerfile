@@ -8,7 +8,6 @@ WORKDIR faraday
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN pip install requests
-RUN pip install restkit
 
 RUN ./install.sh
 RUN python faraday-server.py
