@@ -5,11 +5,11 @@ RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support
 RUN wget https://bootstrap.pypa.io/get-pip.py 
 RUN python get-pip.py 
 RUN pip install requests 
-
-RUN git clone https://github.com/benoitc/restkit.git restkit
-WORKDIR restkit
-RUN python setup.py install 
-RUN pip install restkit 
+RUN pip install restkit
+# RUN git clone https://github.com/benoitc/restkit.git restkit
+# WORKDIR restkit
+# RUN python setup.py install 
+# RUN pip install restkit 
     
 RUN mkdir /home/git/
 WORKDIR /home/git
