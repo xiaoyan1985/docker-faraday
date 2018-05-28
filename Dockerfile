@@ -4,6 +4,10 @@ RUN mkdir /home/git/
 WORKDIR /home/git
 RUN git clone https://github.com/infobyte/faraday.git faraday
 WORKDIR faraday
+
+RUN pip install requests https://bootstrap.pypa.io/get-pip.py
+RUN pip install requests 
+
 RUN ./install.sh
 RUN python faraday-server.py
 CMD /home/git/faraday/faraday.py
