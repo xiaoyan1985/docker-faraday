@@ -15,7 +15,7 @@ RUN mkdir /home/git/
 WORKDIR /home/git
 RUN git clone https://github.com/infobyte/faraday.git faraday
 WORKDIR faraday
-RUN apt-get install python-pip
+RUN apt-get -y install python-pip
 RUN pip install restkit
 
 RUN ./install.sh
