@@ -19,7 +19,7 @@ RUN git clone https://github.com/xiaoyan1985/faraday-5.git faraday
 WORKDIR faraday
 
 RUN apt-get -y install python-pip
-RUN apt-get install python-psycopg2
+RUN apt-get -y install python-psycopg2
 RUN pip install psycopg2==2.6.2
 RUN pip install restkit
 RUN pip install lxml
