@@ -27,6 +27,7 @@ RUN apt-get -y install python-pip \
  && apt -y install gir1.2-vte-2.91 
 
 RUN ./install.sh 
+RUN service couchdb start
 RUN python2 faraday-server.py
  
 CMD /home/git/faraday/faraday.py
