@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support
    
 RUN mkdir /home/git/
 WORKDIR /home/git
-RUN git clone https://github.com/xiaoyan1985/faraday1.git faraday
+RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
 WORKDIR faraday
 
 RUN apt-get -y install python-pip \
