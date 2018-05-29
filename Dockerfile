@@ -26,7 +26,7 @@ RUN apt-get -y install python-pip \
  && pip install beautifulsoup4 \
  && apt -y install gir1.2-vte-2.91 \
 
-RUN ./install.sh \
- && python2 faraday-server.py
+RUN ./install.sh 
+RUN python2 faraday-server.py
  
 CMD /home/git/faraday/faraday.py
