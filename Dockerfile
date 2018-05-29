@@ -17,6 +17,7 @@ RUN git clone https://github.com/xiaoyan1985/faraday-5.git faraday
 WORKDIR faraday
 RUN apt-get -y install python-pip
 RUN pip install restkit
+RUN apt install gir1.2-vte-2.91
 
 RUN ./install.sh
 RUN python2 faraday-server.py
