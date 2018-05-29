@@ -1,4 +1,5 @@
 FROM kalilinux/kali-linux-docker:latest
+USER faraday
 
 RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support 
 
@@ -27,6 +28,7 @@ RUN apt-get -y install python-pip \
  && apt -y install gir1.2-vte-2.91 
 
 RUN ./install.sh 
-RUN python2 faraday-server.py
+python2 ./faraday.py 
+RUN python2 faraday-server.py 
  
-CMD /home/git/faraday/faraday.py
+CMD /home/git/faraday/faraday.py --debug --gui=no
