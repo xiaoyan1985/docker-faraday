@@ -20,7 +20,7 @@ WORKDIR faraday
 
 RUN apt-get -y install python-pip
 RUN apt-get -y install python-psycopg2
-RUN pip install psycopg2==2.6.2
+RUN pip install psycopg2
 RUN pip install restkit
 RUN pip install lxml
 
