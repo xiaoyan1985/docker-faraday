@@ -26,7 +26,7 @@ RUN apt-get -y install python-pip \
 WORKDIR /home/git
 RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
 WORKDIR faraday
-RUN  chmod a+x -R /root/git/faraday
+RUN  chmod a+x -R /home/git/faraday
 
 RUN ./install.sh 
 
