@@ -31,4 +31,4 @@ RUN  chmod a+x -R /root/git/faraday
 RUN ./install.sh 
 RUN python2 faraday-server.py 
  
-CMD /root/git/faraday/faraday.py --debug --gui=no
+CMD /root/git/faraday/faraday.py --debug --gui=no --update
