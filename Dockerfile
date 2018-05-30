@@ -19,12 +19,13 @@ RUN apt-get -y install python-pip \
  && pip install restkit \
  && pip install lxml \
  && pip install beautifulsoup4 \
- && apt -y install gir1.2-vte-2.91 
+ && apt -y install gir1.2-vte-2.91 \ 
+ && mkdir /root/git/ 
 
-RUN mkdir /root/git/
 WORKDIR /root/git
 RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
 WORKDIR faraday
+RUN  chmod a+x -R /root/git/faraday
 
 RUN ./install.sh 
 RUN python2 faraday-server.py 
