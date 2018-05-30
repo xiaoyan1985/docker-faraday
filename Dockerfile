@@ -12,11 +12,6 @@ RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support
   #&& ln -fs /opt/geckodriver-$GECKODRIVER_VERSION /usr/bin/geckodriver
   
 #RUN apt-get install -y  xvfb 
-   
-RUN mkdir /home/git/
-WORKDIR /home/git
-RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday_dev
-WORKDIR faraday_dev
 
 RUN apt-get -y install python-pip \
  && apt-get -y install python-psycopg2 \
@@ -25,6 +20,11 @@ RUN apt-get -y install python-pip \
  && pip install lxml \
  && pip install beautifulsoup4 \
  && apt -y install gir1.2-vte-2.91 
+
+RUN mkdir /home/git/
+WORKDIR /home/git
+RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday_dev
+WORKDIR faraday_dev
 
 RUN ./install.sh 
 RUN python2 faraday-server.py 
