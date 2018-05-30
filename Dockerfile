@@ -21,12 +21,12 @@ RUN apt-get -y install python-pip \
  && pip install beautifulsoup4 \
  && apt -y install gir1.2-vte-2.91 
 
-RUN mkdir /home/git/
-WORKDIR /home/git
+RUN mkdir /root/git/
+WORKDIR /root/git
 RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
 WORKDIR faraday
 
 RUN ./install.sh 
 RUN python2 faraday-server.py 
  
-CMD /home/git/faraday/faraday.py --debug --gui=no
+CMD /root/git/faraday/faraday.py --debug --gui=no
