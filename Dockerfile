@@ -20,7 +20,8 @@ RUN apt-get -y install python-pip \
  && pip install lxml \
  && pip install beautifulsoup4 \
  && apt -y install gir1.2-vte-2.91 \ 
- && mkdir /root/git/ 
+ && mkdir /root/git/ \
+ && apt-get install -y couchdb
 
 WORKDIR /root/git
 RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
