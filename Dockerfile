@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support
    
 RUN mkdir /home/git/
 WORKDIR /home/git
-RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
-WORKDIR faraday
+RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday_dev
+WORKDIR faraday_dev
 
 RUN apt-get -y install python-pip \
  && apt-get -y install python-psycopg2 \
