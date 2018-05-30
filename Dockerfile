@@ -23,8 +23,8 @@ RUN apt-get -y install python-pip \
 
 RUN mkdir /home/git/
 WORKDIR /home/git
-RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday_dev
-WORKDIR faraday_dev
+RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
+WORKDIR faraday
 
 RUN ./install.sh 
 RUN python2 faraday-server.py 
