@@ -2,17 +2,6 @@ FROM kalilinux/kali-linux-docker:latest
 
 RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support 
 
-# ARG GECKODRIVER_VERSION=0.19.1
-# RUN wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v$GECKODRIVER_VERSION/geckodriver-v$GECKODRIVER_VERSION-linux64.tar.gz \
-  #&& rm -rf /opt/geckodriver \
-  #&& tar -C /opt -zxf /tmp/geckodriver.tar.gz \
-  #&& rm /tmp/geckodriver.tar.gz \
-  #&& mv /opt/geckodriver /opt/geckodriver-$GECKODRIVER_VERSION \
-  #&& chmod 755 /opt/geckodriver-$GECKODRIVER_VERSION \
-  #&& ln -fs /opt/geckodriver-$GECKODRIVER_VERSION /usr/bin/geckodriver
-  
-#RUN apt-get install -y  xvfb 
-
 RUN apt-get -y install python-pip \
  && apt-get -y install python-psycopg2 \
  && pip install psycopg2 \
@@ -30,4 +19,4 @@ RUN  chmod a+x -R /home/git/faraday
 
 RUN ./install.sh 
 
-CMD ./start.sh 
+CMD /home/git/faraday/start.sh 
