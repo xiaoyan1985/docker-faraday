@@ -15,8 +15,8 @@ WORKDIR /home/git
 RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
 WORKDIR faraday
 
-RUN chmod a+x -R /home/git/faraday \
- && mount --bind /etc/fstab/ faraday \
- && ./install.sh 
+RUN chmod a+x -R /home/git/faraday 
+RUN mount --bind /etc/fstab/ /home/git/faraday 
+RUN ./install.sh 
 
 CMD /home/git/faraday/faraday.py --gui=no-gui 
