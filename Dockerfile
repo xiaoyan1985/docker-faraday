@@ -18,5 +18,5 @@ WORKDIR faraday
 # RUN chmod a+x -R /home/git/faraday 
 # RUN mount --bind /etc/fstab/ /home/git/faraday 
 RUN ./install.sh 
-
+RUN python faraday-server.py
 CMD /home/git/faraday/faraday.py --gui=no-gui 
