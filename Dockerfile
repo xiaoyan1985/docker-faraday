@@ -14,8 +14,9 @@ RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support \
 WORKDIR /home/git
 RUN git clone https://github.com/xiaoyan1985/faraday2.git faraday
 WORKDIR faraday
-RUN  chmod a+x -R /home/git/faraday
 
-RUN ./install.sh 
+RUN chmod a+x -R /home/git/faraday \
+ && mount /home/git/faraday \
+ && ./install.sh 
 
-CMD /home/git/faraday/faraday.py --gui=no-gui --login 
+CMD /home/git/faraday/faraday.py --gui=no-gui 
