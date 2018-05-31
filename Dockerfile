@@ -1,8 +1,7 @@
 FROM kalilinux/kali-linux-docker:latest
 
-RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support 
-
-RUN apt-get -y install python-pip \
+RUN apt-get update && apt-get install -y git python-qt4-dev libqt4-qt3support \
+ && apt-get -y install python-pip \
  && apt-get -y install python-psycopg2 \
  && pip install psycopg2 \
  && pip install restkit \
@@ -19,4 +18,4 @@ RUN  chmod a+x -R /home/git/faraday
 
 RUN ./install.sh 
 
-CMD /home/git/faraday/start.sh 
+CMD /home/git/faraday/faraday.py --gui=no-gui --login 
